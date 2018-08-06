@@ -1,0 +1,19 @@
+Briefly describe the conceptual approach you chose. What are the trade offs.
+The incoming data stream is received through an Api. 
+The data is first processed, where it is checked whether it is violating a rule or not. If it is not violating a rule, a flag, CorrectSignal is set to true.
+The data is then updated into the database.
+If the signal is violating the rule, then that signal is returned through the Api.
+
+All the processing and updation part and returning data is done in one function.
+The code should be separated and have their own specific classes. So, if in the case of a new requirement, a lot of code changes needs to be done.
+
+
+What's the runtime performance? What is the complexity? What are the bottlenecks?
+During processing of data, the diagnostic tool is showing around 20% of CPU been utilized whereas during non-processing of data it is showing 0%.
+The complexity is O(n).
+
+
+If you had more time, what improvements would you make, and in what order of priority?
+Exception handling has not been done.
+Not much separation of logic has been done.
+
